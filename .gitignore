@@ -1,3 +1,6 @@
-venv
-__pycache__
-resource_htmls
+*
+
+!static/
+!templates/
+!wsgi.py
+!service.py
