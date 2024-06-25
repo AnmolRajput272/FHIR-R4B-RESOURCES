@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FHIR R4B Resources</title>
+  <link rel="icon" href="{{ url_for('static', filename='fire-logo.png') }}" type="image/x-icon">
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+  <div class="header">
+    <div style="display: flex; justify-content: center; align-items: center;">
+        <img src="{{ url_for('static', filename='fire-logo.png') }}" height="60" width="80"/>
+        <h1 style="margin-left: 10px; color: whitesmoke;">FHIR R4B Resources Catalogue</h1>
+    </div>
+    <div class="navbar" style="display: flex; justify-content: space-between; ">
+        <div class="pages-navbar" style="display: flex;">
+            <div>
+                <a href="http://hl7.org/fhir/R4B/foundation-module.html" target="_blank" class="no-design-a">Foundation</a>
+            </div>
+            <div>
+                <a href="http://hl7.org/fhir/R4B/datatypes.html" target="_blank" class="no-design-a">Datatypes</a>
+            </div>
+            <div>
+                <a href="http://hl7.org/fhir/R4B/metadatatypes.html" target="_blank" class="no-design-a">Meta Datatypes</a>
+            </div>
+            <div>
+                <a href="http://hl7.org/fhir/R4B/extensibility.html" target="_blank" class="no-design-a">Extensions</a>
+            </div>
+            <div>
+              <a href="http://hl7.org/fhir/R4B/terminology-module.html" target="_blank" class="no-design-a">Terminology</a>
+            </div>
+        </div>
+        <div class="buttons-navbar" style="display: flex;">
+            <div><a href="https://chat.fhir.org/" target="_blank" class="no-design-a">FHIR Help Forum</a></div>
+            <div><a href="https://www.linkedin.com/in/anmol-suryavanshi/" target="_blank" class="no-design-a">About Developer</a></div>
+        </div>
+    </div>
+  </div>
+  <p class="disclaimer"><span class="info-icon">&#x2139;</span> This website is intended exclusively for educational use. All rights, including copyrights, belong to <a class="no-design-a" href="https://hl7.org/fhir/">HL7 FHIR</a>.</p>
+  <div id="loader">
+    <img class="visible" src="{{ url_for('static', filename='loading.gif') }}"/>
+  </div>
+  <div id="json-viewer"></div>
+  <script type="application/json" id="data-json">{{ data|tojson }}</script>
+  <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
